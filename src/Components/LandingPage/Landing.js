@@ -16,7 +16,6 @@ import prod1 from "../images/product1.jpg";
 import prod2 from "../images/product2.jpg";
 import prod3 from "../images/product3.jpg";
 import prod4 from "../images/product4.jpg";
-// import phone2 from '../images/phone2.jpg';
 
 const Landing = () => {
   let moreCards = cardData.map((data, index) => (
