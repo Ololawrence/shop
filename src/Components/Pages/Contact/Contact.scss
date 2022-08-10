@@ -1,0 +1,39 @@
+.form-wrapper {
+    display:flex;
+}
+.divider {
+    height:100px;
+    background: rgb(82, 159, 247);
+    margin-top:40px;
+    margin-bottom: 5rem;
+   
+    color:white;
+    opacity: 1.5px;
+    h3{
+        text-align: center;
+       padding-top:20px;
+    }
+    
+}
+
+.contact-info {
+    flex:1;
+}
+.form {
+    flex:1;
+    margin-bottom: 4rem;
+}
+span {
+    padding-right:15px;
+}
+
+@media only  screen and (min-width:'300px') and (max-width:'700px') {
+.form-wrapper {
+    display:flex;
+    flex-direction: column;
+}
+
+.form {
+    margin-top:30px;
+}
+}

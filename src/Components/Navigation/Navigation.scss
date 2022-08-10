@@ -1,0 +1,87 @@
+@import "../Common/Color.scss";
+
+.logo-img {
+  padding: 0px 20px 0px 20px;
+  font-size: 20px;
+}
+.market {
+  color: rgb(20, 173, 20);
+  font-weight: 700;
+  text-transform: capitalize;
+  padding-left: 5px;
+}
+.logo {
+  color: #fff;
+  font-weight: 700;
+  text-transform: capitalize;
+
+  &:hover{
+    color:#fff;
+  }
+    a {
+  text-decoration: none;
+  color:#fff;
+  &:hover {
+  
+    color:#fff;
+  
+}
+}
+}
+.search {
+  padding-top: 5px;
+}
+
+.toggle {
+  font-size: 14px;
+  border: none;
+  outline: none;
+  &:focus {
+    background: none;
+    color: inherit;
+    border: none;
+    outline: none;
+  }
+
+  &:hover {
+    background: none;
+    color: inherit;
+    border: none;
+    outline: none;
+  }
+}
+.toggle:focus{
+    outline: none;
+    border: none;
+}
+
+.nav  {
+    background-color:#fff;
+}
+
+.navs a {
+  color:#707070;
+  text-decoration: none;
+  font-size:14px;
+  font-weight: 400;
+}
+
+ a {
+  color:#707070;
+  text-decoration: none;
+  font-size:14px;
+  font-weight: 400;
+
+  &:hover {
+    color:#707070;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+.d-flex {
+  margin-left:10px !important;
+}
+.nav {
+  margin-left: 10px;
+}
+}

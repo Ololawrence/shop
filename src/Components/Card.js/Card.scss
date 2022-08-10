@@ -1,0 +1,33 @@
+@import '../Common/Color.scss';
+
+.card-img img {
+ height: 100px;
+ width:100px; 
+ cursor: pointer;
+}
+
+.card-title p {
+    color:black;
+    text-transform: capitalize;
+    font-size:12px;
+    text-align:justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+}
+
+.card-wrapper{
+    margin:10px;
+}
+
+.btn {
+    padding:10px 15px;
+    width:150px;
+    background-color:rgb(13, 106, 237);
+    text-transform: capitalize;
+    border: none;
+    color:#fff;
+    margin-left:40px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
