@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import "./Fashion.scss";
 import FashionNav from "./fashionNav";
+import SideNav from "./sideNav";
 import { FashionCards } from './fashionCard';
 import { femaleWear } from "./FashionData";
 
@@ -21,7 +22,7 @@ const Women = () => {
   return (
     <>
       <FashionNav />
- 
+  
       <Container className="conts">
         <Container className="women-grid">{femaleCards}</Container>
       </Container>

@@ -124,7 +124,7 @@
 
 @media only screen and(min-width: 320px) and (max-width: 576px) {
 .navs {
-  display:none
+  display:block;
 }
 
 .last-section {
@@ -152,7 +152,7 @@
 @media only screen and (min-width: 577px) and (max-width: 800px) {
 
 .navs {
-  display:none
+  display:block;
 }
   .side-nav1  h5 {
   padding:0;
@@ -174,7 +174,7 @@
   }
 .product-info {
   text-align: center;
-}
+} 
 }
 
 }

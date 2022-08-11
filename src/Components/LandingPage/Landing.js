@@ -46,17 +46,17 @@ const Landing = () => {
             <p>
               <Link to=''> home and garden</Link>
             </p>
-            <p>pages</p>
+        
           </div>
 
           {/* second filter menu */}
           
           <div className="side-nav1">
             <h5>filter by price</h5>
-            <p>fashion</p>
-            <p>Electronics</p>
-            <p>home and garden</p>
-            <p>pages</p>
+            <p>$100 -$250</p>
+            <p>$250 -$500</p>
+            <p>$500-$750</p>
+            <p>$750-$1000</p>
           </div> 
         </Container>
         <Container style={{ flex: "1.50" }}>

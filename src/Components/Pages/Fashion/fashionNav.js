@@ -14,8 +14,8 @@ const FashionNav = () => {
               <svg
                 style={{ color: "red" }}
                 xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
+                width="26px"
+                height="26px"
                 fill="currentColor"
                 class="bi bi-arrow-left"
                 viewBox="0 0 16 16"

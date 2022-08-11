@@ -1,6 +1,4 @@
 import React from "react";
-// import Slider from "react-slick";
-// import { Link } from "react-router-dom";
 import "./Fashion.scss";
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/esm/Container";
@@ -15,7 +13,6 @@ import prod2 from "../../images/product2.jpg";
 import prod3 from "../../images/product3.jpg";
 import prod4 from "../../images/product4.jpg";
 import SideNav from "./sideNav";
-// import phone2 from "../../images/phone2.jpg";
 
 
 
@@ -53,10 +50,10 @@ const Fashion = () => {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                  <h5>First slide label</h5>
+                  {/* <h5>First slide label</h5>
                   <p>
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
-                  </p>
+                  </p> */}
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
@@ -67,10 +64,10 @@ const Fashion = () => {
                 />
 
                 <Carousel.Caption>
-                  <h3>Second slide label</h3>
+                  {/* <h3>Second slide label</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
+                  </p> */}
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
@@ -81,11 +78,11 @@ const Fashion = () => {
                 />
 
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
+                  {/* <h3>Third slide label</h3>
                   <p>
                     Praesent commodo cursus magna, vel scelerisque nisl
                     consectetur.
-                  </p>
+                  </p> */}
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
