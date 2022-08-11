@@ -44,7 +44,7 @@ const Landing = () => {
               <Link to="/"> Electronics</Link>
             </p>
             <p>
-              <Link to=''> home and garden</Link>
+              <Link to=''>  garden</Link>
             </p>
         
           </div>

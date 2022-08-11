@@ -126,7 +126,9 @@
 .navs {
   display:block;
 }
-
+.side-nav1 {
+  display: none;
+}
 .last-section {
   display:block !important;
   h5{
@@ -150,7 +152,9 @@
 }
 
 @media only screen and (min-width: 577px) and (max-width: 800px) {
-
+.side-nav1 {
+  display: none;
+}
 .navs {
   display:block;
 }
@@ -179,13 +183,14 @@
 
 }
 
-@media only screen and (min-width: 801px) and (max-width: 1025px) {
+@media only screen and (min-width: 801px) and (max-width: 1200px) {
 .cont {
   display:block;
 }
-.side-nav1{
-  display:none;
+.side-nav1 {
+display:none
 }
+
 .side-nav{
 display:flex;
 height:8vh !important;
