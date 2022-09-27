@@ -8,10 +8,11 @@ import {
   decreaseCart,
   getTotals,
   removeFromCart,
-  viewCartDetails,
+  // viewCartDetails,
 } from "../../features/cartSlice";
 
 const Cart = () => {
+  const token = localStorage.getItem("token");
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -19,9 +20,9 @@ const Cart = () => {
     dispatch(getTotals());
   }, [cart, dispatch]);
 
-  const handleCartDetials = (cardId) => {
-    dispatch(viewCartDetails(cardId));
-  };
+  // const handleCartDetials = (cardId) => {
+  //   dispatch(viewCartDetails(cardId));
+  // };
 
   const handleRemove = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -31,7 +32,6 @@ const Cart = () => {
     dispatch(decreaseCart(cartItem));
   };
   const handleIncreaseCart = (cartItem) => {
-  
     dispatch(addToCart(cartItem));
   };
 
@@ -78,11 +78,11 @@ const Cart = () => {
                   <img src={cart.image} alt={cart.title} />
                   <div>
                     <h3>{cart.title}</h3>
-                    <p>{cart.sex}</p>
+                    <p style={{textTransform: 'capitalize'}}>{cart.brand}</p>
                     <button onClick={() => handleRemove(cart)}>Remove</button>
-                    <button onClick={() => handleCartDetials(cart)}>
+                    {/* <button onClick={() => handleCartDetials(cart)}>
                       Details
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 <div className="card-product-price">$ {cart.price}</div>
@@ -110,7 +110,16 @@ const Cart = () => {
               </div>
 
               <p>taxes and shipping are calculated at checkout</p>
-              <button>check out</button>
+              <button>
+                {" "}
+                {token ? (
+                  "check out"
+                ) : (
+                  <Link to="/login">
+                    <p style = {{color:'white', fontWeight:'400'}}>login to check out</p>
+                  </Link>
+                )}
+              </button>
               <div className="empty-cart">
                 <div className="continue-shopping">
                   <Link to="/">

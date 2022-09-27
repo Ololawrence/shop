@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 
 const FashionDetailsPage = () => {
     const CartDetails = useSelector(state => state.cart);
-    // console.log(CartDetails.cartItems);
 
   return (
     <Container>

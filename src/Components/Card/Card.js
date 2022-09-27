@@ -3,7 +3,8 @@ import Card from "react-bootstrap/Card";
 import "./Card.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cartSlice";
+import { addToCart,getUser} from "../../features/cartSlice";
+
 import Button from "react-bootstrap/Button";
 
 export const Cards = (props) => {
@@ -11,6 +12,7 @@ export const Cards = (props) => {
   const navigate = useNavigate();
   const handleAddtoCart = (user) => {
     dispatch(addToCart(user));
+    dispatch(getUser(props.userId));
     navigate("/cart");
   };
 
@@ -26,7 +28,7 @@ export const Cards = (props) => {
             handleAddtoCart(props.data);
           }}
         >
-        Add To Cart
+          Add To Cart
         </Button>
       </Card.Body>
     </Card>

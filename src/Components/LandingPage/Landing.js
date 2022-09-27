@@ -6,7 +6,7 @@ import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/esm/Container";
 import Card from "react-bootstrap/Card";
 import { cardData } from "./Mock.data";
-import { Cards } from "./../Card.js/Card";
+import { Cards } from "../Card/Card";
 import { settings } from "./settings";
 import Banner from "../images/banner-full.jpg";
 import banners from "../images/banner-top.jpg";
@@ -18,16 +18,17 @@ import prod3 from "../images/product3.jpg";
 import prod4 from "../images/product4.jpg";
 
 const Landing = () => {
+  
+  const id = localStorage.getItem("id");
   let moreCards = cardData.map((data, index) => (
     <Cards
       key={index}
       data={data}
       title={data.title}
       img={data.image}
-      sex={data.sex}
       brand={data.brand}
-      size={data.size}
       price={data.price}
+      userId={JSON.parse(id)}
     />
   ));
 

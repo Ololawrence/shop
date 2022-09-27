@@ -1,8 +1,10 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { omit } from "lodash";
 import { toast } from "react-toastify";
 import { loginUser } from "../../features/authSlice";
 import { useDispatch } from "react-redux";
+import { registerUser } from "../../features/authSlice";
+
 const useForm = (callback) => {
   const dispatch = useDispatch();
   //Form values
@@ -97,11 +99,24 @@ const useForm = (callback) => {
       });
     }
   };
+  const handleRegSubmit = (event) => {
+    if (event) event.preventDefault();
+    dispatch(registerUser(values));
+
+    if (Object.keys(errors).length === 0 && Object.keys(values).length !== 0) {
+      callback();
+    } else {
+      toast.warning("cheack the form field and correct the nessesary error", {
+        position: "bottom-right",
+      });
+    }
+  };
   return {
     values,
     errors,
     handleChange,
     handleSubmit,
+    handleRegSubmit,
   };
 };
 

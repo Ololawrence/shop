@@ -4,24 +4,20 @@ import axios from "axios";
 
 const initialState = {
   token: localStorage.getItem("token"),
-  auth: {
-    email: "",
-    password: "",
-    registerStatus: "",
-    registerError: "",
-    loginStatus: "",
-    loginError: "",
-    userLoaded: false,
-  },
+  registerStatus: "",
+  registerError: "",
+  loginStatus: "",
+  loginError: "",
+  userLoaded: false,
+  userId: "",
 };
 
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (user, { rejectWithValue }) => {
     try {
-      let response = await axios.post(`${baseUrl}/signup`, user);
+      let response = await axios.post(`${baseUrl}/auth/signup`, user);
 
-      localStorage.setItem("token", JSON.stringify(response.data.token.token));
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -33,13 +29,13 @@ export const loginUser = createAsyncThunk(
   "login/loginUser",
 
   async (user, { rejectWithValue }) => {
-    
     try {
-      let response = await axios.post(`${baseUrl}/login`, user);
- 
-      localStorage.setItem("token", JSON.stringify(response.data.token.token));
+      let response = await axios.post(`${baseUrl}/auth/signin`, user);
+      localStorage.setItem("token", JSON.stringify(response.data.accessToken));
+      localStorage.setItem("id", JSON.stringify(response.data.id));
       return response.data;
     } catch (error) {
+      console.log(error);
       return rejectWithValue(error.response);
     }
   }
@@ -50,17 +46,30 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     loadUser: (state, { payload }) => {
-      state.auth = payload;
+      console.log(state)
+      state.userId = payload;
       state.userLoaded = true;
     },
     loginUsers: (state, { payload }) => {
       state.auth = payload;
       state.userLoaded = true;
     },
+    logout: (state) => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("cartItems");
+      localStorage.removeItem("id");
+      return {
+
+        ...state,
+        token: "",
+        loginStatus: "",
+        userLoaded: false,
+      };
+    }
   },
   extraReducers: {
     [registerUser.pending]: (state, { payload }) => {
-      console.log("pending");
+    
       return { ...state, registerStatus: "pending" };
     },
     [registerUser.fulfilled]: (state, { payload }) => {
@@ -69,7 +78,6 @@ const authSlice = createSlice({
       } else return state;
     },
     [registerUser.rejected]: (state, { payload }) => {
-      console.log("rejected");
       return {
         ...state,
         registerStatus: "rejected",
@@ -77,17 +85,17 @@ const authSlice = createSlice({
       };
     },
 
-    [loginUser.pending]: (state, { payload }) => {
-      console.log("pending");
+    [loginUser.pending]: (state) => {
       return { ...state, loginStatus: "pending" };
     },
     [loginUser.fulfilled]: (state, { payload }) => {
       if (payload) {
-        return { ...state, token: payload, loginStatus: "success" };
+        return { ...state, userId: payload, loginStatus: "success" };
       } else return state;
     },
     [loginUser.rejected]: (state, { payload }) => {
-      console.log("rejected");
+
+      
       return {
         ...state,
         loginStatus: "rejected",
@@ -97,5 +105,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { loadUser, loginUsers } = authSlice.actions;
+export const { loadUser, loginUsers, logout} = authSlice.actions;
 export default authSlice.reducer;

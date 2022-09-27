@@ -8,9 +8,7 @@ export const cardData = [
     id,
     title: "head phone",
     image: head1,
-    sex: "female",
-    brand: "",
-    size: ["XXL", "XL", "L", "M", "SM", "S"],
+    brand: "Accessories",
     price: 300,
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
   },
@@ -20,10 +18,7 @@ export const cardData = [
     image: head2,
     title: "head phone",
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
-
-    sex: "female",
-    brand: "",
-    size: ["XXL", "XL", "L", "M", "SM", "S"],
+    brand: "accessories",
     price: 150,
   },
 
@@ -32,21 +27,19 @@ export const cardData = [
     image: lap3,
     title: "laptop",
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
-
-    sex: "female",
-    brand: "",
-
+    brand: "accessories",
     price: 230,
   },
 ];
+
+
+
 export const fashionData = [
   {
     id,
     title: "head phone",
     image: head1,
-    sex: "female",
-    brand: "",
-    size: ["XXL", "XL", "L", "M", "SM", "S"],
+    brand: "accessories",
     price: 300,
   },
 
@@ -55,8 +48,6 @@ export const fashionData = [
     image: head2,
     title: "head phone",
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
-
-    sex: "female",
     brand: "",
     size: ["XXL", "XL", "L", "M", "SM", "S"],
     price: 150,

@@ -64,7 +64,7 @@ export const boysData = [
 export const femaleWear = [
   {
     id: id,
-    title: "female wears",
+    title: "female top",
     image: girls1,
     sex: "female ",
     price: 300,
@@ -74,7 +74,7 @@ export const femaleWear = [
   {
     id: id,
     image: girls2,
-    title: "female wear",
+    title: "female top",
     sex: "female",
     price: 150,
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
@@ -83,7 +83,7 @@ export const femaleWear = [
   {
     id: id,
     image: girls3,
-    title: "female wear",
+    title: "female top with jean",
     sex: "female",
     brand: "",
     price: 230,
@@ -91,7 +91,7 @@ export const femaleWear = [
   },
   {
     id: id,
-    title: "female wears",
+    title: "female complete wear",
     image: girls4,
     sex: "female ",
     price: 300,
@@ -101,7 +101,7 @@ export const femaleWear = [
   {
     id: id,
     image: girls5,
-    title: "female wear",
+    title: "female top",
     sex: "female",
     price: 150,
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
@@ -110,7 +110,7 @@ export const femaleWear = [
   {
     id: id,
     image: girls6,
-    title: "female wear",
+    title: "female top",
     sex: "female",
     brand: "",
     price: 230,
@@ -120,7 +120,7 @@ export const femaleWear = [
   {
     id: id,
     image: girls7,
-    title: "female wear",
+    title: "3 set female wears",
     sex: "female",
     brand: "",
     price: 230,
@@ -131,6 +131,7 @@ export const femaleWear = [
     title: "female shoe",
     image: shoe1,
     sex: "female ",
+    color: "pink",
     price: 300,
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
   },
@@ -138,7 +139,7 @@ export const femaleWear = [
   {
     id: id,
     image: shoe2,
-    title: "female show",
+    title: "female office shoe",
     sex: "female",
     price: 150,
   },
@@ -146,7 +147,7 @@ export const femaleWear = [
   {
     id: id,
     image: shoe3,
-    title: "female shoe",
+    title: "female flat shoe",
     sex: "female",
     brand: "",
     price: 230,
@@ -155,7 +156,7 @@ export const femaleWear = [
   {
     id: id,
     image: short1,
-    title: "female show",
+    title: "female underwaer",
     sex: "female",
     price: 150,
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
@@ -164,7 +165,7 @@ export const femaleWear = [
   {
     id: id,
     image: short2,
-    title: "female shoe",
+    title: "female underwaer",
     sex: "female",
     brand: "",
     price: 230,
@@ -223,7 +224,7 @@ export const shoeData = [
 export const femalTankTop = [
   {
     id: id,
-    title: "female wears",
+    title: "female brown tank top",
     image: tank1,
     sex: "female ",
     price: 300,
@@ -233,7 +234,7 @@ export const femalTankTop = [
   {
     id: id,
     image: tank2,
-    title: "female wear",
+    title: " white tank top",
     sex: "female",
     price: 150,
     desc: "Stet duo et takimata vero gubergren diam labore. Vero magna consetetur takimata invidunt invidunt, lorem ipsum amet est diam gubergren sed no ut. Dolore rebum ut kasd magna elitr no consetetur, duo vero kasd dolore tempor, accusam ipsum erat at sit labore tempor est eos diam. Eirmod et rebum dolores.",
@@ -242,7 +243,7 @@ export const femalTankTop = [
   {
     id: id,
     image: tank3,
-    title: "female wear",
+    title: "grey tanktop",
     sex: "female",
     brand: "",
     price: 230,

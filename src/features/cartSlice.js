@@ -1,14 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import axios from "axios";
+import { baseUrl } from "../Components/Common/baseurl";
+
 const initialState = {
+  user: localStorage.getItem("id"),
   cartItems: localStorage.getItem("cartItems")
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [],
   cartTotalQuantity: [],
   cartTotalAmount: [],
   signleCartDetails: [],
+  userInfo: localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : {},
+  getUserStatus: "",
 };
 
+export const getUser = createAsyncThunk(
+  "user/getUser",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${baseUrl}/user/${id}`);
+      localStorage.setItem("user", JSON.stringify(response.data));
+      return response.data;
+    } catch (error) {
+      rejectWithValue(error.data);
+    }
+  }
+);
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -19,18 +39,13 @@ const cartSlice = createSlice({
       );
 
       if (itemIdex >= 0) {
-        // state.cartItems[itemIdex].cartQuantity += 1;
-        // toast.info(`increased ${state.cartItems[itemIdex].title} quantity `, {
-        //   position: "bottom-left",
-        // });
-
-            state.cartItems[itemIdex] = {
-              ...state.cartItems[itemIdex],
-              cartQuantity: state.cartItems[itemIdex].cartQuantity + 1,
-            };
-            toast.info("Increased product quantity", {
-              position: "bottom-left",
-            });
+        state.cartItems[itemIdex] = {
+          ...state.cartItems[itemIdex],
+          cartQuantity: state.cartItems[itemIdex].cartQuantity + 1,
+        };
+        toast.info("Increased product quantity", {
+          position: "bottom-left",
+        });
       } else {
         const tempProduct = { ...payload, cartQuantity: 1 };
         state.cartItems.push(tempProduct);
@@ -42,8 +57,14 @@ const cartSlice = createSlice({
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
+    getUser: (state, { payload }) => {
+      return {
+        ...state,
+        userInfo: payload,
+      };
+    },
+
     viewCartDetails: (state, { payload }) => {
-      console.log(payload)
     },
 
     removeFromCart: (state, { payload }) => {
@@ -82,7 +103,10 @@ const cartSlice = createSlice({
 
     clearCart: (state, { payload }) => {
       state.cartItems = [];
+      state.user = "";
+      state.userInfo = {};
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      localStorage.setItem("user", JSON.stringify(state.userInfo));
       toast.success(`cart  cleared`, {
         position: "top-right",
       });
@@ -107,6 +131,17 @@ const cartSlice = createSlice({
 
       state.cartTotalQuantity = quantity;
       state.cartTotalAmount = total;
+    },
+  },
+  extraReducers: {
+    [getUser.pending]: (state) => {
+      return { ...state, getUserStatus: "pending" };
+    },
+    [getUser.fulfilled]: (state, { payload }) => {
+      return { ...state, userInfo: payload, getUserStatus: "fulfilled" };
+    },
+    [getUser.rejected]: (state) => {
+      return { ...state, getUserStatus: "rejected" };
     },
   },
 });

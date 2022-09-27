@@ -26,7 +26,7 @@ const logoNav = () => {
               />
             </svg>
           </span>
-          <Link to ='/'>
+          <Link to ='/' className="logo-text">
           online
             <span className="market"> market</span>
           </Link>

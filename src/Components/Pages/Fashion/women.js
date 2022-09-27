@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import "./Fashion.scss";
 import FashionNav from "./fashionNav";
-import SideNav from "./sideNav";
+// import SideNav from "./sideNav";
 import { FashionCards } from './fashionCard';
 import { femaleWear } from "./FashionData";
 

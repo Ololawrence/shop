@@ -1,30 +1,39 @@
-import React, {useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ClipLoader } from "react-spinners";
 import "./Login.scss";
 import useForm from "../Common/formHooks";
 
 const Login = () => {
   const auth = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+
   const formLogin = () => {};
   const { handleChange, errors, handleSubmit } = useForm(formLogin);
-  useEffect(() => { 
-     
-  }, []);
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [token, navigate]);
 
   return (
     <>
+      {auth?.loginStatus === "pending" ? (
+        <div className="spinner">{<ClipLoader color="#6ed8af" />}</div>
+      ) : null}
       <p className="info"> Login into your account</p>
       <div className="login">
         <form onSubmit={handleSubmit}>
           <input
-            type="email"
-            name="email"
-            placeholder="E-mail"
+            type="text"
+            name="username"
+            placeholder="username"
             onChange={handleChange}
           />
 
-          {errors.email && <p className="error">{errors.email}</p>}
+          {errors.username && <p className="error">{errors.username}</p>}
           {auth.loginStatus === "rejected" ? (
             <p className="error">{auth.loginError.data.message}</p>
           ) : null}
@@ -35,7 +44,7 @@ const Login = () => {
             onChange={handleChange}
           />
           {errors.password && <p className="error">{errors.password}</p>}
-          <button type="submit" disabled> register</button>
+          <button type="submit" disabled> Login</button>
 
           <p>
             Don't have an account? <Link to="/register">Register</Link>{" "}
